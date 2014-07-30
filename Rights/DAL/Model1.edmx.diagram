@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06cfbae2dc4f47a3923564e6abd36d81" Name="Diagram1">
+        <EntityTypeShape EntityType="SysModel.FileUploader" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SysModel.SysAnnouncement" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysModel.SysDepartment" Width="1.5" PointX="1.5" PointY="23.75" />
+        <EntityTypeShape EntityType="SysModel.SysDocument" Width="1.5" PointX="1.5" PointY="19.5" />
+        <EntityTypeShape EntityType="SysModel.SysDocumentTalk" Width="1.5" PointX="3.75" PointY="20" />
+        <EntityTypeShape EntityType="SysModel.SysException" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysModel.SysField" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysModel.SysLog" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysModel.SysMenu" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="SysModel.SysMenuSysRoleSysOperation" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="SysModel.SysNotice" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SysModel.SysOperation" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="SysModel.SysPerson" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="SysModel.SysRole" Width="1.5" PointX="3" PointY="13.125" />
+        <AssociationConnector Association="SysModel.FK_SYSDEPAR_REFERENCE_SYSDEPAR" />
+        <AssociationConnector Association="SysModel.FK_SYSPERSO_REFERENCE_SYSDEPAR" />
+        <AssociationConnector Association="SysModel.FK_SYSDOCUM_REFERENCE_SYSDOCUM" />
+        <AssociationConnector Association="SysModel.FK_SYSFIELD_REFERENCE_SYSFIELD" />
+        <AssociationConnector Association="SysModel.FK_SYSMENU_REFERENCE_SYSMENU" />
+        <AssociationConnector Association="SysModel.FK_SYSMENUS_REFERENCE_SYSMENU2" />
+        <AssociationConnector Association="SysModel.FK_SYSMENUS_REFERENCE_SYSOPERA2" />
+        <AssociationConnector Association="SysModel.FK_SYSMENUS_REFERENCE_SYSROLE" />
+        <AssociationConnector Association="SysModel.SysDocumentSysDepartment" />
+        <AssociationConnector Association="SysModel.SysDocumentSysPerson" />
+        <AssociationConnector Association="SysModel.SysMenuSysOperation" />
+        <AssociationConnector Association="SysModel.SysRoleSysPerson" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

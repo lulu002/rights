@@ -1,0 +1,43 @@
+﻿ 
+<!DOCTYPE html>
+<html>
+<head id="MyHead" >
+  
+    <title>  </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/easyui")
+    @RenderSection("HeadContent", false)
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $('.easyui-combobox').combobox({
+                width: 201,
+                onSelect: function (record) {
+                    var strs = record.text.split("—");
+                    $(this).combobox('setValue', strs[0]);
+                }
+            });
+            //查询按钮样式
+            $('.submitcss').mouseover(function () { this.style.background = 'rgb(113,4,4)'; }).mouseout(function () { this.style.background = 'rgb(131,0,0)'; });
+
+        });
+    </script>
+    <style>
+        a {
+            border-bottom: 1px solid #1c49b9;
+            text-decoration: none;
+            color: #1c49b9;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body> 
+    @RenderBody()
+    
+    <br style="clear: both;" />
+    <table id="flexigridData"></table>
+    <div id="dialo" title="操作">
+    </div>
+  
+</body>
+</html>

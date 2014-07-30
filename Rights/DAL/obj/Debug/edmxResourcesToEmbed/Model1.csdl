@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FileUploader" EntityType="SysModel.FileUploader" />
+    <EntitySet Name="SysAnnouncement" EntityType="SysModel.SysAnnouncement" />
+    <EntitySet Name="SysDepartment" EntityType="SysModel.SysDepartment" />
+    <EntitySet Name="SysDocument" EntityType="SysModel.SysDocument" />
+    <EntitySet Name="SysDocumentTalk" EntityType="SysModel.SysDocumentTalk" />
+    <EntitySet Name="SysException" EntityType="SysModel.SysException" />
+    <EntitySet Name="SysField" EntityType="SysModel.SysField" />
+    <EntitySet Name="SysLog" EntityType="SysModel.SysLog" />
+    <EntitySet Name="SysMenu" EntityType="SysModel.SysMenu" />
+    <EntitySet Name="SysMenuSysRoleSysOperation" EntityType="SysModel.SysMenuSysRoleSysOperation" />
+    <EntitySet Name="SysNotice" EntityType="SysModel.SysNotice" />
+    <EntitySet Name="SysOperation" EntityType="SysModel.SysOperation" />
+    <EntitySet Name="SysPerson" EntityType="SysModel.SysPerson" />
+    <EntitySet Name="SysRole" EntityType="SysModel.SysRole" />
+    <AssociationSet Name="FK_SYSDEPAR_REFERENCE_SYSDEPAR" Association="SysModel.FK_SYSDEPAR_REFERENCE_SYSDEPAR">
+      <End Role="SysDepartment" EntitySet="SysDepartment" />
+      <End Role="SysDepartment1" EntitySet="SysDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSPERSO_REFERENCE_SYSDEPAR" Association="SysModel.FK_SYSPERSO_REFERENCE_SYSDEPAR">
+      <End Role="SysDepartment" EntitySet="SysDepartment" />
+      <End Role="SysPerson" EntitySet="SysPerson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSDOCUM_REFERENCE_SYSDOCUM" Association="SysModel.FK_SYSDOCUM_REFERENCE_SYSDOCUM">
+      <End Role="SysDocument" EntitySet="SysDocument" />
+      <End Role="SysDocumentTalk" EntitySet="SysDocumentTalk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSFIELD_REFERENCE_SYSFIELD" Association="SysModel.FK_SYSFIELD_REFERENCE_SYSFIELD">
+      <End Role="SysField" EntitySet="SysField" />
+      <End Role="SysField1" EntitySet="SysField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSMENU_REFERENCE_SYSMENU" Association="SysModel.FK_SYSMENU_REFERENCE_SYSMENU">
+      <End Role="SysMenu" EntitySet="SysMenu" />
+      <End Role="SysMenu1" EntitySet="SysMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSMENUS_REFERENCE_SYSMENU2" Association="SysModel.FK_SYSMENUS_REFERENCE_SYSMENU2">
+      <End Role="SysMenu" EntitySet="SysMenu" />
+      <End Role="SysMenuSysRoleSysOperation" EntitySet="SysMenuSysRoleSysOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSMENUS_REFERENCE_SYSOPERA2" Association="SysModel.FK_SYSMENUS_REFERENCE_SYSOPERA2">
+      <End Role="SysOperation" EntitySet="SysOperation" />
+      <End Role="SysMenuSysRoleSysOperation" EntitySet="SysMenuSysRoleSysOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSMENUS_REFERENCE_SYSROLE" Association="SysModel.FK_SYSMENUS_REFERENCE_SYSROLE">
+      <End Role="SysRole" EntitySet="SysRole" />
+      <End Role="SysMenuSysRoleSysOperation" EntitySet="SysMenuSysRoleSysOperation" />
+    </AssociationSet>
+    <AssociationSet Name="SysDocumentSysDepartment" Association="SysModel.SysDocumentSysDepartment">
+      <End Role="SysDepartment" EntitySet="SysDepartment" />
+      <End Role="SysDocument" EntitySet="SysDocument" />
+    </AssociationSet>
+    <AssociationSet Name="SysDocumentSysPerson" Association="SysModel.SysDocumentSysPerson">
+      <End Role="SysDocument" EntitySet="SysDocument" />
+      <End Role="SysPerson" EntitySet="SysPerson" />
+    </AssociationSet>
+    <AssociationSet Name="SysMenuSysOperation" Association="SysModel.SysMenuSysOperation">
+      <End Role="SysMenu" EntitySet="SysMenu" />
+      <End Role="SysOperation" EntitySet="SysOperation" />
+    </AssociationSet>
+    <AssociationSet Name="SysRoleSysPerson" Association="SysModel.SysRoleSysPerson">
+      <End Role="SysPerson" EntitySet="SysPerson" />
+      <End Role="SysRole" EntitySet="SysRole" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FileUploader">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FullPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysAnnouncement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysDepartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysDepartment1" Relationship="SysModel.FK_SYSDEPAR_REFERENCE_SYSDEPAR" FromRole="SysDepartment" ToRole="SysDepartment1" />
+    <NavigationProperty Name="SysDepartment2" Relationship="SysModel.FK_SYSDEPAR_REFERENCE_SYSDEPAR" FromRole="SysDepartment1" ToRole="SysDepartment" />
+    <NavigationProperty Name="SysPerson" Relationship="SysModel.FK_SYSPERSO_REFERENCE_SYSDEPAR" FromRole="SysDepartment" ToRole="SysPerson" />
+    <NavigationProperty Name="SysDocument" Relationship="SysModel.SysDocumentSysDepartment" FromRole="SysDepartment" ToRole="SysDocument" />
+  </EntityType>
+  <EntityType Name="SysDocument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FullPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Download" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysDocumentTalk" Relationship="SysModel.FK_SYSDOCUM_REFERENCE_SYSDOCUM" FromRole="SysDocument" ToRole="SysDocumentTalk" />
+    <NavigationProperty Name="SysDepartment" Relationship="SysModel.SysDocumentSysDepartment" FromRole="SysDocument" ToRole="SysDepartment" />
+    <NavigationProperty Name="SysPerson" Relationship="SysModel.SysDocumentSysPerson" FromRole="SysDocument" ToRole="SysPerson" />
+  </EntityType>
+  <EntityType Name="SysDocumentTalk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SysDocumentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Bad" Type="Int32" />
+    <Property Name="Good" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysDocument" Relationship="SysModel.FK_SYSDOCUM_REFERENCE_SYSDOCUM" FromRole="SysDocumentTalk" ToRole="SysDocument" />
+  </EntityType>
+  <EntityType Name="SysException">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="LeiXing" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MyTexts" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MyTables" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MyColums" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysField1" Relationship="SysModel.FK_SYSFIELD_REFERENCE_SYSFIELD" FromRole="SysField" ToRole="SysField1" />
+    <NavigationProperty Name="SysField2" Relationship="SysModel.FK_SYSFIELD_REFERENCE_SYSFIELD" FromRole="SysField1" ToRole="SysField" />
+  </EntityType>
+  <EntityType Name="SysLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="PersonId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MenuId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Ip" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Iconic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsLeaf" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysMenu1" Relationship="SysModel.FK_SYSMENU_REFERENCE_SYSMENU" FromRole="SysMenu" ToRole="SysMenu1" />
+    <NavigationProperty Name="SysMenu2" Relationship="SysModel.FK_SYSMENU_REFERENCE_SYSMENU" FromRole="SysMenu1" ToRole="SysMenu" />
+    <NavigationProperty Name="SysMenuSysRoleSysOperation" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSMENU2" FromRole="SysMenu" ToRole="SysMenuSysRoleSysOperation" />
+    <NavigationProperty Name="SysOperation" Relationship="SysModel.SysMenuSysOperation" FromRole="SysMenu" ToRole="SysOperation" />
+  </EntityType>
+  <EntityType Name="SysMenuSysRoleSysOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SysMenuId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SysOperationId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SysRoleId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysMenu" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSMENU2" FromRole="SysMenuSysRoleSysOperation" ToRole="SysMenu" />
+    <NavigationProperty Name="SysOperation" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSOPERA2" FromRole="SysMenuSysRoleSysOperation" ToRole="SysOperation" />
+    <NavigationProperty Name="SysRole" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSROLE" FromRole="SysMenuSysRoleSysOperation" ToRole="SysRole" />
+  </EntityType>
+  <EntityType Name="SysNotice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="LostTime" Type="DateTime" Precision="3" />
+    <Property Name="PersonId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SysOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Function" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Iconic" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysMenuSysRoleSysOperation" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSOPERA2" FromRole="SysOperation" ToRole="SysMenuSysRoleSysOperation" />
+    <NavigationProperty Name="SysMenu" Relationship="SysModel.SysMenuSysOperation" FromRole="SysOperation" ToRole="SysMenu" />
+  </EntityType>
+  <EntityType Name="SysPerson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SurePassword" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SysDepartmentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Province" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Village" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="LogonNum" Type="Int32" />
+    <Property Name="LogonTime" Type="DateTime" Precision="3" />
+    <Property Name="LogonIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogonTime" Type="DateTime" Precision="3" />
+    <Property Name="LastLogonIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PageStyle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SysDepartment" Relationship="SysModel.FK_SYSPERSO_REFERENCE_SYSDEPAR" FromRole="SysPerson" ToRole="SysDepartment" />
+    <NavigationProperty Name="SysDocument" Relationship="SysModel.SysDocumentSysPerson" FromRole="SysPerson" ToRole="SysDocument" />
+    <NavigationProperty Name="SysRole" Relationship="SysModel.SysRoleSysPerson" FromRole="SysPerson" ToRole="SysRole" />
+  </EntityType>
+  <EntityType Name="SysRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatePerson" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SysMenuSysRoleSysOperation" Relationship="SysModel.FK_SYSMENUS_REFERENCE_SYSROLE" FromRole="SysRole" ToRole="SysMenuSysRoleSysOperation" />
+    <NavigationProperty Name="SysPerson" Relationship="SysModel.SysRoleSysPerson" FromRole="SysRole" ToRole="SysPerson" />
+  </EntityType>
+  <Association Name="FK_SYSDEPAR_REFERENCE_SYSDEPAR">
+    <End Type="SysModel.SysDepartment" Role="SysDepartment" Multiplicity="0..1" />
+    <End Type="SysModel.SysDepartment" Role="SysDepartment1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysDepartment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysDepartment1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSPERSO_REFERENCE_SYSDEPAR">
+    <End Type="SysModel.SysDepartment" Role="SysDepartment" Multiplicity="0..1" />
+    <End Type="SysModel.SysPerson" Role="SysPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysDepartment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysPerson">
+        <PropertyRef Name="SysDepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSDOCUM_REFERENCE_SYSDOCUM">
+    <End Type="SysModel.SysDocument" Role="SysDocument" Multiplicity="0..1" />
+    <End Type="SysModel.SysDocumentTalk" Role="SysDocumentTalk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysDocument">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysDocumentTalk">
+        <PropertyRef Name="SysDocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSFIELD_REFERENCE_SYSFIELD">
+    <End Type="SysModel.SysField" Role="SysField" Multiplicity="0..1" />
+    <End Type="SysModel.SysField" Role="SysField1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysField">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysField1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSMENU_REFERENCE_SYSMENU">
+    <End Type="SysModel.SysMenu" Role="SysMenu" Multiplicity="0..1" />
+    <End Type="SysModel.SysMenu" Role="SysMenu1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysMenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysMenu1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSMENUS_REFERENCE_SYSMENU2">
+    <End Type="SysModel.SysMenu" Role="SysMenu" Multiplicity="0..1" />
+    <End Type="SysModel.SysMenuSysRoleSysOperation" Role="SysMenuSysRoleSysOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysMenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysMenuSysRoleSysOperation">
+        <PropertyRef Name="SysMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSMENUS_REFERENCE_SYSOPERA2">
+    <End Type="SysModel.SysOperation" Role="SysOperation" Multiplicity="0..1" />
+    <End Type="SysModel.SysMenuSysRoleSysOperation" Role="SysMenuSysRoleSysOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysOperation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysMenuSysRoleSysOperation">
+        <PropertyRef Name="SysOperationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSMENUS_REFERENCE_SYSROLE">
+    <End Type="SysModel.SysRole" Role="SysRole" Multiplicity="0..1" />
+    <End Type="SysModel.SysMenuSysRoleSysOperation" Role="SysMenuSysRoleSysOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysMenuSysRoleSysOperation">
+        <PropertyRef Name="SysRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SysDocumentSysDepartment">
+    <End Type="SysModel.SysDepartment" Role="SysDepartment" Multiplicity="*" />
+    <End Type="SysModel.SysDocument" Role="SysDocument" Multiplicity="*" />
+  </Association>
+  <Association Name="SysDocumentSysPerson">
+    <End Type="SysModel.SysDocument" Role="SysDocument" Multiplicity="*" />
+    <End Type="SysModel.SysPerson" Role="SysPerson" Multiplicity="*" />
+  </Association>
+  <Association Name="SysMenuSysOperation">
+    <End Type="SysModel.SysMenu" Role="SysMenu" Multiplicity="*" />
+    <End Type="SysModel.SysOperation" Role="SysOperation" Multiplicity="*" />
+  </Association>
+  <Association Name="SysRoleSysPerson">
+    <End Type="SysModel.SysPerson" Role="SysPerson" Multiplicity="*" />
+    <End Type="SysModel.SysRole" Role="SysRole" Multiplicity="*" />
+  </Association>
+</Schema>

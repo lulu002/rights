@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SysModelStoreContainer" CdmEntityContainer="SysEntities">
+    <EntitySetMapping Name="FileUploader">
+      <EntityTypeMapping TypeName="SysModel.FileUploader">
+        <MappingFragment StoreEntitySet="FileUploader">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysAnnouncement">
+      <EntityTypeMapping TypeName="SysModel.SysAnnouncement">
+        <MappingFragment StoreEntitySet="SysAnnouncement">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysDepartment">
+      <EntityTypeMapping TypeName="SysModel.SysDepartment">
+        <MappingFragment StoreEntitySet="SysDepartment">
+          <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysDocument">
+      <EntityTypeMapping TypeName="SysModel.SysDocument">
+        <MappingFragment StoreEntitySet="SysDocument">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Download" ColumnName="Download" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysDocumentTalk">
+      <EntityTypeMapping TypeName="SysModel.SysDocumentTalk">
+        <MappingFragment StoreEntitySet="SysDocumentTalk">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Good" ColumnName="Good" />
+          <ScalarProperty Name="Bad" ColumnName="Bad" />
+          <ScalarProperty Name="SysDocumentId" ColumnName="SysDocumentId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysException">
+      <EntityTypeMapping TypeName="SysModel.SysException">
+        <MappingFragment StoreEntitySet="SysException">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="LeiXing" ColumnName="LeiXing" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysField">
+      <EntityTypeMapping TypeName="SysModel.SysField">
+        <MappingFragment StoreEntitySet="SysField">
+          <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="MyColums" ColumnName="MyColums" />
+          <ScalarProperty Name="MyTables" ColumnName="MyTables" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="MyTexts" ColumnName="MyTexts" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysLog">
+      <EntityTypeMapping TypeName="SysModel.SysLog">
+        <MappingFragment StoreEntitySet="SysLog">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysMenu">
+      <EntityTypeMapping TypeName="SysModel.SysMenu">
+        <MappingFragment StoreEntitySet="SysMenu">
+          <ScalarProperty Name="IsLeaf" ColumnName="IsLeaf" />
+          <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Iconic" ColumnName="Iconic" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysMenuSysRoleSysOperation">
+      <EntityTypeMapping TypeName="SysModel.SysMenuSysRoleSysOperation">
+        <MappingFragment StoreEntitySet="SysMenuSysRoleSysOperation">
+          <ScalarProperty Name="SysRoleId" ColumnName="SysRoleId" />
+          <ScalarProperty Name="SysOperationId" ColumnName="SysOperationId" />
+          <ScalarProperty Name="SysMenuId" ColumnName="SysMenuId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysNotice">
+      <EntityTypeMapping TypeName="SysModel.SysNotice">
+        <MappingFragment StoreEntitySet="SysNotice">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="LostTime" ColumnName="LostTime" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysOperation">
+      <EntityTypeMapping TypeName="SysModel.SysOperation">
+        <MappingFragment StoreEntitySet="SysOperation">
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Iconic" ColumnName="Iconic" />
+          <ScalarProperty Name="Function" ColumnName="Function" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysPerson">
+      <EntityTypeMapping TypeName="SysModel.SysPerson">
+        <MappingFragment StoreEntitySet="SysPerson">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+          <ScalarProperty Name="PageStyle" ColumnName="PageStyle" />
+          <ScalarProperty Name="LastLogonIP" ColumnName="LastLogonIP" />
+          <ScalarProperty Name="LastLogonTime" ColumnName="LastLogonTime" />
+          <ScalarProperty Name="LogonIP" ColumnName="LogonIP" />
+          <ScalarProperty Name="LogonTime" ColumnName="LogonTime" />
+          <ScalarProperty Name="LogonNum" ColumnName="LogonNum" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="SysDepartmentId" ColumnName="SysDepartmentId" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="SurePassword" ColumnName="SurePassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MyName" ColumnName="MyName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysRole">
+      <EntityTypeMapping TypeName="SysModel.SysRole">
+        <MappingFragment StoreEntitySet="SysRole">
+          <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SysDocumentSysDepartment" TypeName="SysModel.SysDocumentSysDepartment" StoreEntitySet="SysDocumentSysDepartment">
+      <EndProperty Name="SysDocument">
+        <ScalarProperty Name="Id" ColumnName="Sys_Id" />
+      </EndProperty>
+      <EndProperty Name="SysDepartment">
+        <ScalarProperty Name="Id" ColumnName="SysDepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SysDocumentSysPerson" TypeName="SysModel.SysDocumentSysPerson" StoreEntitySet="SysDocumentSysPerson">
+      <EndProperty Name="SysPerson">
+        <ScalarProperty Name="Id" ColumnName="SysPersonId" />
+      </EndProperty>
+      <EndProperty Name="SysDocument">
+        <ScalarProperty Name="Id" ColumnName="SysSysDocumentId_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SysMenuSysOperation" TypeName="SysModel.SysMenuSysOperation" StoreEntitySet="SysMenuSysOperation">
+      <EndProperty Name="SysOperation">
+        <ScalarProperty Name="Id" ColumnName="SysOperationId" />
+      </EndProperty>
+      <EndProperty Name="SysMenu">
+        <ScalarProperty Name="Id" ColumnName="SysMenuId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SysRoleSysPerson" TypeName="SysModel.SysRoleSysPerson" StoreEntitySet="SysRoleSysPerson">
+      <EndProperty Name="SysRole">
+        <ScalarProperty Name="Id" ColumnName="SysRoleId" />
+      </EndProperty>
+      <EndProperty Name="SysPerson">
+        <ScalarProperty Name="Id" ColumnName="SysPersonId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

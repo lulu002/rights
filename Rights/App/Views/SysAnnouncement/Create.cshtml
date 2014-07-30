@@ -1,0 +1,51 @@
+﻿@model Langben.DAL.SysAnnouncement
+
+@{
+    Layout = "~/Views/Shared/Create.cshtml";
+}
+@using Common
+@using Models
+ 
+@section CurentPlace {
+ 
+      创建  
+ 
+ }
+    <fieldset>
+        <legend>
+            <input class="a2 f2" type="submit" value="创建" />
+            <input class="a2 f2" type="button" onclick="BackList('SysAnnouncement')" value="返回" />
+        </legend>
+        <div class="bigdiv">
+            
+            <br style="clear: both;" />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Message)：
+            </div>
+            <div class="textarea-box">
+                @Html.TextAreaFor(model => model.Message) 
+                @Html.ValidationMessageFor(model => model.Message) 
+            </div>     
+            <div class="editor-label">
+                @Html.LabelFor(model => model.State)：
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.State)
+                @Html.ValidationMessageFor(model => model.State)
+            </div>
+        </div>
+    </fieldset>
+ 
+
+    
+    <script type="text/javascript">
+
+        $(function () {
+            
+
+        });
+              
+
+    </script>
+
+
