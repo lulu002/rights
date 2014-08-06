@@ -1,4 +1,7 @@
-﻿using Models;
+﻿using Langben.BLL;
+using Langben.DAL;
+using Langben.IBLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +17,22 @@ namespace Langben.App.Controllers
 
         public ActionResult Index()
         {
-            var person = Utils.ReadCookieAsObj("SysPerson");
-            if (person == null)
+            //var person = Utils.ReadCookieAsObj("SysPerson");
+            //if (person == null)
+            //{
+            //    return Redirect("/Account");
+            //}
+            ViewBag.MyName = "person.MyName";
+
+            ISysAnnouncementBLL announcementBLL = new SysAnnouncementBLL();
+            SysAnnouncement announcement = announcementBLL.GetTop(1);
+            if (announcement!=null)
             {
-                return Redirect("/Account");
+                ViewBag.Announcement = announcement.Message;
             }
-            ViewBag.MyName = person.MyName;
+            
+            
+
             return View();
         }
        

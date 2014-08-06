@@ -60,6 +60,7 @@
     <Compile Include="Framework\BaseRepository.cs" />
     <Compile Include="Framework\BaseViewRepository.cs" />
     <Compile Include="Framework\IBaseEntity.cs" />
+    <Compile Include="Framework\SysAnnouncementRepository.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

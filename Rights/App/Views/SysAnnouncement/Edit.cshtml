@@ -28,8 +28,9 @@
                 @Html.LabelFor(model => model.State)：
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.State)
-                @Html.ValidationMessageFor(model => model.State)
+                @Html.RadioButtonListFor(model => model.State, Models.SysFieldModels.GetSysField("SysPerson", "State"), true)
+
+
             </div>@Html.HiddenFor(model => model.CreateTime ) @Html.HiddenFor(model => model.CreatePerson ) 
         </div>
     </fieldset>

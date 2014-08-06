@@ -30,8 +30,8 @@
                 @Html.LabelFor(model => model.State)：
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.State)
-                @Html.ValidationMessageFor(model => model.State)
+                @Html.RadioButtonListFor(model => model.State, Models.SysFieldModels.GetSysField("SysPerson", "State"), true)
+                
             </div>
         </div>
     </fieldset>

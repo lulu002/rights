@@ -3,24 +3,7 @@
 @{ Layout = "~/Views/Shared/Index.cshtml"; }
 @using Common 
 @using Models
-<div id="divQuery">
-     
-            <div class="input_search">
-            <div class="input_search-label">
-                    @Html.LabelFor(model => model.Name):
-             </div>
-                <div class="input_search-field">
-                    <input type='text' id='Name'/>
-               </div>
-            </div>
-    <div class='input_search' style="padding-top:10px;">
-        <a href="#" onclick="flexiQuery()" class="easyui-linkbutton" data-options="iconCls:'icon-search'">
-            查 询
-        </a>
-    </div>
-</div>
  
-
 <script type="text/javascript" language="javascript">
         $(function () {
 
