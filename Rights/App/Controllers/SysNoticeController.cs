@@ -73,6 +73,50 @@ namespace Langben.App.Controllers
             });
         }
         /// <summary>
+        /// 异步加载数据
+        /// </summary>
+        /// <param name="page">页码</param>
+        /// <param name="rows">每页显示的行数</param>
+        /// <param name="order">排序字段</param>
+        /// <param name="sort">升序asc（默认）还是降序desc</param>
+        /// <param name="search">查询条件</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GetDataByPersonName()
+        {
+            //var person = Utils.ReadCookieAsObj("SysPerson");
+             
+            //var search = "PersonIdDDL_String&" + person.Id + "^";
+            var search = "PersonIdDDL_String&" + "Admin" + "^";
+            int total = 10;
+            List<SysNotice> queryData = m_BLL.GetByParam(string.Empty, 1, 10, "desc", "CreateTime", search, ref total);
+            return Json(new datagrid
+            {
+                total = total,
+                rows = queryData.Select(s => new
+                {
+                    Id = s.Id
+                    ,
+                    Message = s.Message
+                    ,
+                    LostTime = s.LostTime
+                    ,
+                    PersonId = s.PersonId
+                    ,
+                    Remark = s.Remark
+                    ,
+                    State = s.State
+                    ,
+                    CreateTime = s.CreateTime
+                    ,
+                    CreatePerson = s.CreatePerson
+
+                }
+
+                    )
+            });
+        }
+        /// <summary>
         ///  导出Excle /*在6.0版本中 新增*/
         /// </summary>
         /// <param name="param">Flexigrid传过到后台的参数</param>
