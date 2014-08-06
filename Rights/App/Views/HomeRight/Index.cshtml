@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>  </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/easyui")
+    <script src="~/Res/easyui/jquery.portal.js"></script>
+    <style type="text/css">
+    </style>
+
+    <script>
+        $(function () {
+            $('#pp').portal({
+                border: false,
+                fit: true
+            });
+
+        });
+
+
+        var Common = {
+            //EasyUI用DataGrid用日期格式化
+            TimeFormatter: function (value, rec, index) {
+                if (value == undefined) {
+                    return "";
+                }
+                return dateConvert(value);
+
+            }
+
+        };
+
+    </script>
+    <style>
+        .denglu {
+            color: blue;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden" class="easyui-layout">
+
+    <div region="center" border="false">
+        <div id="pp">
+            <div style="width:40%;">
+                <div title="登录信息" collapsible="true" closable="true" style="height:200px; padding-left:5px  ">
+                    <span class="denglu">
+                        @ViewBag.MyName
+                    </span>,您好,欢迎使用本平台！ <br />
+ 
+
+                </div>
+                <div id="pgrid2" title="代办事宜" closable="true" style="height: 310px;">
+                    <table class="easyui-datagrid" style="width:460px;height:auto"
+                           fit="true" border="false"
+                           singleselect="true"
+                           idfield="ID" url='../ut_user_shiw/GetDataa'>
+                        <thead>
+                            <tr>
+                                <th field="待办事项" width="356">待办事项</th>
+                                <th field="启动时间" formatter="Common.TimeFormatter" width="100">启动时间</th>
+
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </div>
+            <div style="width:40%;">
+                <div title="通知中心" collapsible="true" closable="true" style="height: 200px; padding-left: 5px">
+                    @*@(new HtmlString(ViewBag.zaiya))*@
+
+
+                </div>
+
+                <div id="pgrid" title="审查审批" closable="true" style="height: 310px; ">
+                    <table class="easyui-datagrid" style="width:460px;height:auto"
+                           fit="true" border="false"
+                           singleselect="true"
+                           idfield="ID" url='../us_gl_liuch/GetDataa'>
+                        <thead>
+                            <tr>
+                                <th field="记录标题摘要" width="356">记录标题摘要</th>
+                                <th field="提交时间" formatter="Common.TimeFormatter" width="100">提交时间</th>
+
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

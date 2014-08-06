@@ -7,14 +7,19 @@ using System.Web.Mvc;
 
 namespace Langben.App.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeRightController : BaseController
     {
         //
         // GET: /Home/
 
         public ActionResult Index()
         {
-             
+            var person = Utils.ReadCookieAsObj("SysPerson");
+            if (person == null)
+            {
+                return Redirect("/Account");
+            }
+            ViewBag.MyName = person.MyName;
             return View();
         }
        

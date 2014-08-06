@@ -66,6 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,10 +138,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Codes\BaseController.cs" />
+    <Compile Include="Codes\CookieEntity.cs" />
     <Compile Include="Codes\LogClassModels.cs" />
     <Compile Include="Codes\SupportFilter.cs" />
     <Compile Include="Codes\SysFieldModels.cs" />
+    <Compile Include="Codes\Utils.cs" />
     <Compile Include="Controllers\FileUploaderController.cs" />
+    <Compile Include="Controllers\HomeRightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SysAnnouncementController.cs" />
     <Compile Include="Controllers\SysDepartmentController.cs" />
@@ -203,6 +207,7 @@
     <Content Include="Images\yuanjiao.gif" />
     <Content Include="Images\yuanjiao.png" />
     <Content Include="Res\easyui\jquery.easyui.min.js" />
+    <Content Include="Res\easyui\jquery.portal.js" />
     <Content Include="Res\easyui\locale\easyui-lang-zh_CN.js" />
     <Content Include="Res\easyui\themes\black\accordion.css" />
     <Content Include="Res\easyui\themes\black\calendar.css" />
@@ -650,6 +655,7 @@
     <Content Include="Views\SysRole\Details.cshtml" />
     <Content Include="Views\SysRole\Edit.cshtml" />
     <Content Include="Views\SysRole\Index.cshtml" />
+    <Content Include="Views\HomeRight\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
