@@ -38,6 +38,33 @@ namespace Langben.App.Controllers
 
             return View();
         }
+
+
+
+        /// <summary>
+        /// 2014-8-18 欧阳
+        /// 向sysmenu create edit提供sysoperation列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GetAllData()
+        {
+
+            int total = 0;
+            List<SysOperation> queryData = m_BLL.GetByParam(null, 1, 100, "desc", "Id", null, ref total);
+            return Json(
+                queryData.Select(s => new
+                {
+                    Id = s.Id
+                    ,
+                    Name = s.Name
+                    ,
+                    Iconic = s.Iconic
+                })
+               );
+        }
+
+
         /// <summary>
         /// 异步加载数据
         /// </summary>
